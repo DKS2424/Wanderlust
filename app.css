@@ -108,6 +108,30 @@
     #heading p {
         font-size: 20px;
     }
+
+}
+
+@media (max-width:480px) {
+    #heading p {
+        font-size: 16px;
+    }
+
+}
+
+@media (max-width:400px) {
+    #heading p {
+        font-size: 13px;
+    }
+
+    #heading h1 {
+        font-size: 40px;
+    }
+
+    #heading a {
+        font-size: 15px;
+        width: 80px;
+    }
+
 }
 
 /* NAVBAR END */
@@ -255,6 +279,7 @@
     }
 }
 
+
 /* EXPLORE END */
 
 /* ------------------------------------------- */
@@ -270,7 +295,11 @@
 
 .swiper-container {
     margin-top: 5%;
+    margin-left: 17%;
     margin-bottom: 5%;
+    width: 70%;
+    justify-content: center;
+
 }
 
 
@@ -371,6 +400,17 @@
 .hover-content p {
     text-align: center;
     padding: 20px;
+    width: 60%;
+    font-size: larger;
+}
+
+@media(max-width:600px) {
+    .hover-content p {
+        text-align: center;
+        padding: 20px;
+        width: 100%;
+        font-size: medium;
+    }
 }
 
 
@@ -606,6 +646,38 @@ input:nth-of-type(2) {
 
 
 
+@media(max-width:500px) {
+
+
+    .send_message input {
+        margin-left: 6%;
+        width: 230px;
+    }
+
+    #name {
+        margin-left: 6%;
+        width: 230px;
+
+    }
+
+    .send_message textarea {
+        margin-left: 6%;
+        width: 230px;
+
+    }
+
+    .send_message input:nth-of-type(3) {
+        margin-top: 10px;
+        width: 230px;
+    }
+
+    .send_message button {
+        margin-bottom: 20px;
+        margin-left: 27%;
+    }
+
+}
+
 
 /* CONTACT END */
 
@@ -702,7 +774,7 @@ footer {
     margin: 0px 5px;
 }
 
-@media(min-width:550px) {
+@media(min-width:575px) {
     .footerNav ul {
         flex-direction: row;
         justify-content: center;
@@ -722,6 +794,24 @@ footer {
     }
 
 }
+
+@media(max-width:575px) {
+    .footerNav ul {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0%;
+        font-size: 1.2em;
+        position: relative;
+        left: 10px;
+    }
+
+    .footerNav ul li a {
+        padding: 10px 10px;
+        font-size: 18px;
+    }
+}
+
 
 /* FOOTER END */
 
