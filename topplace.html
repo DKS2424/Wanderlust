@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>topplacesw</title>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster&display=swap">
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      background-color: #f4f4f4;
+      color: #333;
+
+    }
+
+    .content-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    /* Logo */
+    .logo {
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 3rem;
+      color: #005792;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      margin-bottom: 20px;
+    }
+
+    .head {
+      background: white;
+      padding: 20px 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+    }
+
+    .head h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+
+    .head p {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    /* History Sections */
+    .history,
+    .history1,
+    .history2,
+    .history3,
+    .history5,
+    .history6 {
+      display: flex;
+      align-items: center;
+      margin: 2rem 1rem;
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .content {
+      flex: 1;
+      padding: 1rem 2rem;
+    }
+
+    .place h3 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      color: #0c5a13;
+    }
+
+    .info p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .moreinfo button {
+      border: none;
+      background-color: #0c5a13;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .moreinfo button:hover {
+      background-color: #094d11;
+    }
+
+    .image {
+      flex: 1;
+    }
+
+    .image img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    /* Other Sections */
+    .others {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin: 2rem 1rem;
+    }
+
+    .spot,
+    .spot2,
+    .spot3,
+    .spot4,
+    .spot5,
+    .spot6,
+    .spot7,
+    .spot8,
+    .spot9,
+    .spot10 {
+      margin: 1rem;
+      flex: 1 1 300px;
+      max-width: 300px;
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .spot:hover,
+    .spot2:hover,
+    .spot3:hover,
+    .spot4:hover,
+    .spot5:hover,
+    .spot6:hover,
+    .spot7:hover,
+    .spot8:hover,
+    .spot9:hover,
+    .spot10:hover {
+      transform: scale(1.05);
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card__content {
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .card__title {
+      font-size: 1.2rem;
+      color: #0c5a13;
+    }
+
+    /* More Places */
+    .moreplace {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .morere h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #0c5a13;
+    }
+
+    .b1 a {
+      background-color: #0c5a13;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .b1 a:hover {
+      background-color: #094d11;
+    }
+
+    .backimage {
+      position: relative;
+      width: 100%;
+      height: 600px;
+      overflow: hidden;
+    }
+
+    .backimage img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      /* Darker overlay */
+    }
+
+    /* Title Styling */
+    .title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      font-size: 3rem;
+      font-weight: 500;
+      font-style: italic;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    }
+
+    .title span {
+      color: #ffeb3b;
+      /* Highlight color */
+    }
+
+    @media (max-width: 768px) {
+      .logo {
+        font-size: 2.5rem;
+      }
+
+      .head {
+        padding: 15px 30px;
+      }
+
+      .head h3 {
+        font-size: 1.75rem;
+      }
+
+      .head p {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo {
+        font-size: 2rem;
+      }
+
+      .head {
+        padding: 10px 20px;
+      }
+
+      .head h3 {
+        font-size: 1.5rem;
+      }
+
+      .head p {
+        font-size: 0.85rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .title {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .title {
+        font-size: 1.5rem;
+      }
+    }
+
+    /* Media Queries */
+    @media (max-width: 768px) {
+
+      .history,
+      .history1,
+      .history2,
+      .history3,
+      .history5,
+      .history6 {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .content {
+        padding: 1rem;
+      }
+
+      .others {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .head h3 {
+        font-size: 1.8rem;
+      }
+
+      .head p {
+        font-size: 1rem;
+      }
+
+      .place h3 {
+        font-size: 1.5rem;
+      }
+
+      .info p {
+        font-size: 0.9rem;
+      }
+
+      .card__title {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content-wrapper">
+    <div class="logo">
+      <b>Wanderlust Way</b>
+    </div>
+
+
+    <div class="head">
+      <h3>TOP DESTINATIONS</h3>
+      <p>Discover KARNATAKA’s enchanting destinations, from the tranquil seas to majestic mountains. With wonderlust
+        Tourism Pvt.Ltd</p>
+    </div>
+  </div>
+  <div class="history" data-aos="zoom-in" data-aos-duration="1000">
+    <div class="content">
+      <div class="place">
+        <h3><b>HAMPI</b></h3>
+      </div>
+      <div class="info">
+        <p>Laid-back Hampi was the last capital of Vijayanagar, one of the greatest Hindu kingdoms in India’s history.
+        </p>
+      </div>
+      <div class="moreinfo"><a href="https://www.karnatakatourism.org/tour-item/hampi/"><button
+            style="border-radius: 20px;">KNOW MORE</button></a></div>
+    </div>
+    <div class="image"> <img src="arun-prakash-Q0mSdYr7EFQ-unsplash.jpg" width="380px" height="400px"></div>
+  </div>
+  <div class="history1" data-aos="zoom-in" data-aos-duration="1000">
+    <div class="content">
+      <div class="place">
+        <h3><b>MYSORE PALACE</b></h3>
+      </div>
+      <div class="info">
+        <p>Mysore Palace, also known as Amba Vilas Palace and Mysore Aramane, is one of the most magnificent and largest
+          palaces in India. </p>
+      </div>
+      <div class="moreinfo"><a href="https://www.karnatakatourism.org/tour-item/mysuru/"><button
+            style="border-radius: 20px;">KNOW MORE</button></a></div>
+    </div>
+
+    <div class="image"> <img src="pexels-pranavsinh232-5480518.jpg" width="380px" height="400px"></div>
+  </div>
+  <div class="history2" data-aos="zoom-in" data-aos-duration="1000">
+    <div class="content">
+      <div class="place">
+        <h3><b>BELOOR-HALEBIDU</b></h3>
+      </div>
+      <div class="info">
+        <p> Immerse yourself in the intricate carvings and unravel the fascinating stories behind these magnificent
+          structures. </p>
+      </div>
+      <div class="moreinfo"><a
+          href="https://www.karnatakatourism.org/tour-item/belur-halebeedu-shravanabelagola/"><button
+            style="border-radius: 20px;">KNOW MORE</button></a></div>
+    </div>
+    <div class="image"> <img src="temple-343934_640.jpg" width="380px" height="400px"></div>
+  </div>
+  <div class="history3" data-aos="zoom-in" data-aos-duration="1000">
+    <div class="content">
+      <div class="place">
+        <h3><b>SHRAVANA-BELAGOLA</h3>
+      </div>
+
+      <div class="info">
+        <p>It is thr world's tallest monolithic statue of lord Gomesteshwara the town has a giant stone figure, believed
+          to be 1,000 years old, of Bahubali</p>
+
+      </div>
+      <div class="moreinfo"><a
+          href="https://www.karnatakatourism.org/tour-item/belur-halebeedu-shravanabelagola/"><button
+            style="border-radius: 20px;">KNOW MORE</button></a></div>
+    </div>
+    <div class="image"> <img src="AdobeStock_121404578_Preview.jpeg" width="380px" height="400px"></div>
+  </div>
+  <div class="history5" data-aos="zoom-in" data-aos-duration="1000">
+    <div class="content">
+      <div class="place">
+        <h3><b>RANGANATHASWAMY-TEMPLE</h3>
+      </div>
+      <div class="info">
+        <p> Ranganathaswamy Temple is one of the country’s most revered Temples. It is dedicated to Ranganatha, an
+          incarnation of Lord Vishnu. </p>
+      </div>
+      <div class="moreinfo"><a
+          href="https://www.karnatakatourism.org/ranganathaswamy-temple-srirangapatna/page/3/"><button
+            style="border-radius: 20px;">KNOW MORE</button></a></div>
+
+    </div>
+    <div class="image"> <img src="1569088385_ranganathaswamy-temple-srirangapatna1.jpg" width="380px" height="400px">
+    </div>
+  </div>
+  <div class="history6" data-aos="zoom-in" data-aos-duration="1000">
+    <div class="content">
+      <div class="place">
+        <h3><b>SRINGERI-TEMPLE</h3>
+      </div>
+      <div class="info">
+        <p> This is known as the pilgrimage centre which was built by Adi Shankara during the 9th century. </p>
+      </div>
+      <div class="moreinfo"><a href="https://www.karnatakatourism.org/tour-item/sringeri/"><button
+            style="border-radius: 20px;">KNOW MORE</button></a></div>
+
+    </div>
+    <div class="image"> <img src="gettyimages-179983395-612x612.jpg" width="380px" height="400px"></div>
+  </div>
+
+  <div class="others" data-aos="zoom-in" data-aos-duration="1000">
+    <div class="spot">
+      <div class="card">
+        <img src="bandipur.jpg" alt="" height="180" width="300">
+        <div class="card__content">
+          <p class="card__title"> Bandipur National Park</p>
+          <!-- <p class="card__description">Get as close as you can to natural wildlife in Bandipur National Park. Perfect haven for animal lovers who want to get engrossed in the sights and sounds of the forest.</p> -->
+        </div>
+      </div>
+
+    </div>
+
+
+
+    <div class="spot2">
+      <div class="card">
+        <img src="mallali.jpeg" alt="" height="180" width="300">
+        <div class="card__content">
+          <p class="card__title">COORG</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="spot3">
+      <div class="card">
+        <img src="jogfalls.jpg" alt="" height="180" width="300">
+        <div class="card__content">
+          <p class="card__title">Shivanasamudra Falls</p>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="spot4">
+      <div class="card">
+        <img src="gokarna.jpg" alt="" height="180" width="300">
+        <div class="card__content">
+          <p class="card__title">Gokarna</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="spot5">
+      <div class="card">
+        <img src="shivanasamudra.jpg" alt="" height="180" width="300">
+        <div class="card__content">
+          <p class="card__title">Jog Falls</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="spot6">
+      <div class="card">
+        <img src="chithradurga.jpg" alt="" height="180" width="300">
+        <div class="card__content">
+          <p class="card__title">Chitradurga Fort</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="spot7">
+      <div class="card">
+        <img src="dandeli.jpg" alt="" height="180" width="300">
+        <div class="card__content">
+          <p class="card__title">Dandeli</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="spot8">
+      <div class="card">
+        <img src="nandihills.jpg" alt="" height="180" width="300">
+        <div class="card__content">
+          <p class="card__title"> Nandi Hills</p>
+        </div>
+      </div>
+
+    </div>
+    <div class="spot9">
+      <div class="card">
+        <img src="bijapur.jpg" alt="" height="180" width="300">
+        <div class="card__content">
+          <p class="card__title">Bijapur</p>
+        </div>
+      </div>
+
+    </div>
+    <div class="spot10">
+      <div class="card">
+        <img src="Jog falls.jpg" alt="" height="180" width="300">
+        <div class="card__content">
+          <p class="card__title">jogfalls</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="moreplace">
+    <div class="morere">
+      <h3>Discover More With <b>Wanderlust Way</b></h3>
+    </div>
+    <div class="b1"><a id="More" href="D:\WanderLust\index.html#Kar">More</a></div>
+
+  </div>
+  <!-- 
+<div class="review">
+  <div class="rehead"><b> TOP REVIEWS</b></div>
+  
+  <div class="person1">
+    <div class="profile"><img src="C:\Users\kmrag\OneDrive\Desktop\travel-planner\profilepic.png" alt="" width="60" height="60"></div>
+    <div class="name"><b>user1</b></div>
+    <span class="material-symbols-outlined">
+      star
+      </span>
+    <div class="opinion"> <p>A very amazing trip with wanderlust.Really i give  5 star  for theire service.I recommend wonderlust for everyone for their amazing trip</p></div>
+  </div>
+
+
+  <div class="person2">
+    <div class="profile"><img src="C:\Users\kmrag\OneDrive\Desktop\travel-planner\profilepic.png" alt="" width="60" height="60"></div>
+    <div class="name"><b>user2</b></div>
+    <div class="opinion"> <p>A very amazing trip with wanderlust.services offered by them  was worth for money</p></div>
+  </div>
+
+
+  <div class="person3">
+    <div class="profile"><img src="C:\Users\kmrag\OneDrive\Desktop\travel-planner\profilepic.png" alt="" width="60" height="60"></div>
+    <div class="name"><b>user3</b></div>
+    <div class="opinion"> <p>Good trip to enjoy our holidays.</p></div>
+  </div>
+
+  <div class="person4">
+    <div class="profile"><img src="C:\Users\kmrag\OneDrive\Desktop\travel-planner\profilepic.png" alt="" width="60" height="60"></div>
+    <div class="name"><b>user4</b></div>
+    <div class="opinion"> <p>A very amazing trip with wanderlust.Really i give  5 star  for theire service.</p></div>
+  </div>
+
+  
+</div> -->
+  <div class="backimage">
+    <img src="hills-station.jpg" alt="path in correctr" width="100%" height="600px" id="imgchange">
+    <div class="title"><b>LAND OF HERITAGE <span>KARNATAKA</span></b></div>
+  </div>
+  <script src="https://unpkg.com/aos@next/dist/aos.js">
+    AOS.init();
+  </script>
+  <script>  AOS.init(); 
+  </script>
+  <script>var img = new Array("hills-station.jpg", "Baga Beach Goa.jpeg", "bandipur.jpg", "Hampi.jpeg", "Jog falls.jpg", "nandihills.jpg");
+    var i = 1;
+    var imgcomponent = document.getElementById("imgchange");
+
+    setInterval(() => {
+
+      imgcomponent.src = img[i];
+      i++;
+      if (i == 6)
+        i = 0
+
+    }, 3000)</script>
+</body>
+
+</html>
