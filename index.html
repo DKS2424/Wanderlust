@@ -809,13 +809,32 @@
 
         <div class="send_message">
             <h1>Send Message</h1>
-            <form action=" " method="get">
+            <form action="" method="get">
                 <input type="text" placeholder="Your Name*" required id="name">
                 <input type="tel" placeholder="Phone Number*" maxlength="10" required id="phone">
                 <input type="email" placeholder="Your Gmail*" required id="Gmail">
                 <textarea rows="6" cols="40" placeholder="Message" required id="Message"></textarea><br>
-               <a href="https://wa.me/917676045748"> <button type="submit" onsubmit="sumbit();" id="button" href="">SUBMIT</button></a>S
-            </form>
+                <button type="button" onclick="sendWhatsAppMessage()">SUBMIT</button>
+              </form>
+              
+              <script>
+                function sendWhatsAppMessage() {
+                  // Get input values
+                  const name = document.getElementById("name").value;
+                  const phone = document.getElementById("phone").value;
+                  const message = document.getElementById("Message").value;
+              
+                  // Construct the WhatsApp link with the name and phone included
+                  const fullMessage = `Name: ${name}\nPhone: ${phone}\nMessage: ${message}`;
+                  const encodedMessage = encodeURIComponent(fullMessage);
+                  const waLink = `https://wa.me/7624910281?text=${encodedMessage}`;
+              
+                  // Open the WhatsApp chat window
+                  window.open(waLink, "_blank");
+                }
+              </script>
+              
+              
         </div>
     </div>
 

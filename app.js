@@ -13,6 +13,11 @@ window.addEventListener('scroll', () => {
     }
 });
 
-
+function getmessage()
+{
+    const anchor=document.getElementById("linkwa");
+    const message=document.getElementById("message").value
+    alert(message)
+}
 
 
