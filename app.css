@@ -308,6 +308,7 @@
     height: 500px;
     width: 60%;
     border: 2px solid #ffffff;
+
 }
 
 
@@ -432,6 +433,8 @@
 
 .main_about {
     height: 80vh;
+    margin-bottom: 5%;
+    overflow: hidden;
 }
 
 .aboutus {
@@ -471,7 +474,8 @@
 
 
     .main_about {
-        height: 140vh;
+        height: 135vh;
+        overflow: hiddenx;
     }
 
     .aboutus {
@@ -504,6 +508,7 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+
 
 }
 
@@ -568,7 +573,6 @@ input:nth-of-type(2) {
 
 .send_message textarea {
     border-radius: 10px;
-    padding-left: 10px;
     margin-left: 16px;
     margin-top: 10px;
 
@@ -586,9 +590,7 @@ input:nth-of-type(2) {
     border: none;
     font-family: "Source Serif 4", serif;
     border: 1px solid #1976bc;
-    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);
-
-    text-decoration: none;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5)
 }
 
 
@@ -624,15 +626,24 @@ input:nth-of-type(2) {
 
     }
 
+    .formm {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+
     .send_message input {
-        margin-left: 7%;
+        /* margin-left: 7%; */
         width: 300px;
 
     }
 
     .send_message textarea {
-        margin-left: 7%;
+        /* margin-left: 7%; */
         width: 300px;
+        margin-left: 0%;
 
     }
 
@@ -645,7 +656,7 @@ input:nth-of-type(2) {
 
     .send_message button {
         margin-bottom: 20px;
-        margin-left: 30%;
+        /* margin-left: 30%; */
     }
 
 }
@@ -654,21 +665,35 @@ input:nth-of-type(2) {
 
 @media(max-width:500px) {
 
+    .send_message {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .formm {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 
     .send_message input {
-        margin-left: 6%;
+        /* margin-left: 9%; */
         width: 230px;
     }
 
     #name {
-        margin-left: 6%;
+        /* margin-left: 9%; */
         width: 230px;
 
     }
 
     .send_message textarea {
-        margin-left: 6%;
+        /* margin-left: 9%; */
         width: 230px;
+        margin-left: 0%;
 
     }
 
@@ -679,8 +704,9 @@ input:nth-of-type(2) {
 
     .send_message button {
         margin-bottom: 20px;
-        margin-left: 27%;
+        /* margin-left: 27%; */
     }
+
 
 
 }
