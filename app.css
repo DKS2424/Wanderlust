@@ -474,8 +474,8 @@
 
 
     .main_about {
-        height: 135vh;
-        overflow: hiddenx;
+        height: 130vh;
+        overflow: hidden;
     }
 
     .aboutus {
@@ -491,7 +491,7 @@
 
     .aboutus p {
         margin-top: -10px;
-        width: 80%;
+        width: 70%;
         font-weight: 80;
     }
 }
@@ -573,6 +573,7 @@ input:nth-of-type(2) {
 
 .send_message textarea {
     border-radius: 10px;
+    padding: 10px;
     margin-left: 16px;
     margin-top: 10px;
 
