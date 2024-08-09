@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WanderLust</title>
 
+    <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
@@ -54,7 +55,7 @@
                         <a href="#Home" class="nav-link">HOME</a>
                     </li>
                     <li class="navbar-item px-3">
-                        <a href="topplace.html" class="nav-link">TOP PLACES</a>
+                        <a href="file:///D:/WanderLust/webpage2/topplace.html" class="nav-link">TOP PLACES</a>
                     </li>
                     <!-- <li class="navbar-item px-3">
                         <a href="" class="nav-link">TOURS & ACTIVITIES</a>
@@ -104,7 +105,7 @@
 
             <swiper-slide class="slide">
                 <div class="slide-content">
-                    <img src=".\pic\shivkumar-yash-00odRMuHE50-unsplash.jpg" alt="Slide Image">
+                    <img src="D:\WanderLust\pic\shivkumar-yash-00odRMuHE50-unsplash.jpg" alt="Slide Image">
                     <h2 class="slide-heading">Bagalkote</h2>
                     <div class="hover-content">
                         <p>
@@ -124,7 +125,7 @@
 
             <swiper-slide class="slide">
                 <div class="slide-content">
-                    <img src=".\pic\pexels-abhinandan-j-patil-722703852-18320285.jpg" alt="Slide Image">
+                    <img src="D:\WanderLust\pic\pexels-abhinandan-j-patil-722703852-18320285.jpg" alt="Slide Image">
                     <h2 class="slide-heading">Bijapur</h2>
                     <div class="hover-content">
                         <p>
@@ -328,7 +329,7 @@
             </swiper-slide>
             <swiper-slide class="slide">
                 <div class="slide-content">
-                    <img src="https://media.istockphoto.com/id/137336783/photo/vittala-temple-stone-chariot-hampi-karnataka-india.jpg?s=612x612&w=0&k=20&c=mQq4me5Nr_8uWnr4eQcJCSy5tcZ46H-QzIxrYsn6f2E=" alt="Slide Image">
+                    <img src="" alt="Slide Image">
                     <h2 class="slide-heading">Vijayanagara</h2>
                     <div class="hover-content">
                         <p>
@@ -489,7 +490,7 @@
             </swiper-slide>
             <swiper-slide class="slide">
                 <div class="slide-content">
-                    <img src=".\pic\Jog falls.jpg" alt="Slide Image">
+                    <img src="D:\WanderLust\pic\111.jpg" alt="Slide Image">
                     <h2 class="slide-heading">Shimoga</h2>
                     <div class="hover-content">
                         <p>
@@ -509,7 +510,7 @@
             </swiper-slide>
             <swiper-slide class="slide">
                 <div class="slide-content">
-                    <img src=".\pic\Baga Beach Goa.jpeg" alt="Slide Image">
+                    <img src="D:\WanderLust\pic\Baga Beach Goa.jpeg" alt="Slide Image">
                     <h2 class="slide-heading">Udupi</h2>
                     <div class="hover-content">
                         <p>
@@ -764,14 +765,14 @@
 
 
     <!-- ABOUT -->
-    <div id="main_about">
+    <div id="main_aboute">
         <br>
         <h1 style="border-bottom: 1px solid rgb(153, 151, 151,0.2); margin-top: 20px;"></h1>
     </div>
     <div class="main_about" data-aos="zoom-in">
         <h1><span style="color: #f96d00;">About</span> Us</h1>
         <div class="aboutus">
-            <img src=".\pic\About us page-cuate.png" alt="">
+            <img src="D:\WanderLust\pic\About us page-cuate.png" alt="">
             <p>Welcome to Explore Karnataka, your ultimate guide to discovering the vibrant and diverse tourist
                 destinations
                 of Karnataka! Our mission is to showcase the beauty, culture, and heritage of this stunning state to
@@ -809,32 +810,15 @@
 
         <div class="send_message">
             <h1>Send Message</h1>
-            <form action="" method="get">
-                <input type="text" placeholder="Your Name*" required id="name">
-                <input type="tel" placeholder="Phone Number*" maxlength="10" required id="phone">
-                <input type="email" placeholder="Your Gmail*" required id="Gmail">
-                <textarea rows="6" cols="40" placeholder="Message" required id="Message"></textarea><br>
-                <button type="button" onclick="sendWhatsAppMessage()">SUBMIT</button>
-              </form>
-              
-              <script>
-                function sendWhatsAppMessage() {
-                  // Get input values
-                  const name = document.getElementById("name").value;
-                  const phone = document.getElementById("phone").value;
-                  const message = document.getElementById("Message").value;
-              
-                  // Construct the WhatsApp link with the name and phone included
-                  const fullMessage = `Name: ${name}\nPhone: ${phone}\nMessage: ${message}`;
-                  const encodedMessage = encodeURIComponent(fullMessage);
-                  const waLink = `https://wa.me/7676045748?text=${encodedMessage}`;
-              
-                  // Open the WhatsApp chat window
-                  window.open(waLink, "_blank");
-                }
-              </script>
-              
-              
+            <form action=" " method="get">
+                <div class="formm">
+                    <input type="text" placeholder="Your Name*" required id="name">
+                    <input type="tel" placeholder="Phone Number*" maxlength="10" required id="phone">
+                    <input type="email" placeholder="Your Gmail*" required id="Gmail">
+                    <textarea rows="6" cols="40" placeholder="Message" required id="Message"></textarea><br>
+                    <button type="submit" onsubmit="sumbit();" id="button">SUBMIT</button>
+                </div>
+            </form>
         </div>
     </div>
 
