@@ -13,11 +13,28 @@ window.addEventListener('scroll', () => {
     }
 });
 
-function getmessage()
-{
-    const anchor=document.getElementById("linkwa");
-    const message=document.getElementById("message").value
+function getmessage() {
+    const anchor = document.getElementById("linkwa");
+    const message = document.getElementById("message").value
     alert(message)
 }
+
+
+document.getElementById('contactForm').addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent actual form submission
+    console.log("Clciked")
+    // Get input values
+    var name = document.getElementById('name').value;
+    var phone = document.getElementById('phone').value;
+    var email = document.getElementById('gmail').value;
+    var message = document.getElementById('Message').value;
+
+
+    var whatsappMessage = `Hello, I would like to contact you.\n\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nMessage: ${message}`;
+    var whatsappNumber = "7624910281";
+    var whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+    window.open(whatsappURL, '_blank');
+});
+
 
 
